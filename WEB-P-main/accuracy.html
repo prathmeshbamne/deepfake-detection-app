@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Accuracy | DeepGuard</title>
+    <meta name="description" content="Accuracy metrics for DeepGuard's LSTM-based Deepfake Detection System">
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/accuracy.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Chart.js for interactive graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <a href="E:/web/index.html"><img src="assets/logo.png" alt="DeepGuard Logo"></a>
+                <span>DeepGuard</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="login.html">Login</a>
+                <a href="accuracy.html" class="active">Accuracy</a>
+                <a href="about.html">About</a>
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="accuracy-container">
+        <section class="accuracy-header">
+            <h1>Model Accuracy Metrics</h1>
+            <p>Performance evaluation of our LSTM-based Deepfake Detection System</p>
+            <div class="divider"></div>
+        </section>
+
+        <!-- Accuracy Definition -->
+        <section class="accuracy-definition">
+            <h2>Understanding Model Accuracy</h2>
+            <div class="definition-content">
+                <div class="text-content">
+                    <h3>What is Accuracy in Deep Learning?</h3>
+                    <p>Accuracy measures how often our model makes correct predictions. It's calculated as the ratio of correct predictions to the total number of predictions made.</p>
+                    
+                    <h3>Our Accuracy Formula</h3>
+                    <div class="formula-box">
+                        \[
+                        \text{Accuracy} = \frac{\text{True Positives} + \text{True Negatives}}{\text{Total Samples}}
+                        \]
+                    </div>
+                    
+                    <h3>Additional Metrics</h3>
+                    <p>While accuracy is important, we also monitor:</p>
+                    <ul>
+                        <li><strong>Precision</strong>: Measures how many identified deepfakes were actually deepfakes</li>
+                        <li><strong>Recall</strong>: Measures how many actual deepfakes were correctly identified</li>
+                        <li><strong>F1 Score</strong>: Harmonic mean of precision and recall</li>
+                    </ul>
+                </div>
+                <div class="metrics-illustration">
+                    <div class="confusion-matrix">
+                        <h4>Confusion Matrix</h4>
+                        <table>
+                            <tr>
+                                <th></th>
+                                <th>Predicted Real</th>
+                                <th>Predicted Fake</th>
+                            </tr>
+                            <tr>
+                                <th>Actual Real</th>
+                                <td>True Negative</td>
+                                <td>False Positive</td>
+                            </tr>
+                            <tr>
+                                <th>Actual Fake</th>
+                                <td>False Negative</td>
+                                <td>True Positive</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accuracy Visualization -->
+        <section class="accuracy-visualization">
+            <h2>Model Performance Over Time</h2>
+            <div class="graph-container">
+                <canvas id="accuracyChart"></canvas>
+            </div>
+            <div class="graph-controls">
+                <button class="graph-btn active" data-metric="accuracy">Accuracy</button>
+                <button class="graph-btn" data-metric="loss">Loss</button>
+                <button class="graph-btn" data-metric="precision">Precision</button>
+                <button class="graph-btn" data-metric="recall">Recall</button>
+            </div>
+        </section>
+
+        <!-- Performance Analysis -->
+        <section class="performance-analysis">
+            <h2>Performance Analysis</h2>
+            <div class="analysis-content">
+                <div class="analysis-text">
+                    <h3>Training Progress</h3>
+                    <p>Our model achieved <strong>94.7% accuracy</strong> on the validation set after 50 epochs of training. The graph shows steady improvement in the first 20 epochs, followed by gradual refinement.</p>
+                    
+                    <h3>Key Observations</h3>
+                    <ul>
+                        <li>Rapid learning in early epochs (1-15) with accuracy jumping from 65% to 90%</li>
+                        <li>Plateau phase (20-35 epochs) where additional training provided diminishing returns</li>
+                        <li>Final refinement (35-50 epochs) where we achieved our peak performance</li>
+                    </ul>
+                    
+                    <h3>Comparative Performance</h3>
+                    <p>When benchmarked against standard datasets (FaceForensics++, DFDC), our model outperforms:</p>
+                    <ul>
+                        <li>Traditional CNN approaches by ~12%</li>
+                        <li>Other LSTM implementations by ~7%</li>
+                    </ul>
+                </div>
+                <div class="benchmark-card">
+                    <h4>Benchmark Results</h4>
+                    <div class="benchmark-item">
+                        <span class="metric-name">Accuracy</span>
+                        <span class="metric-value">94.7%</span>
+                        <div class="metric-bar" style="width: 94.7%"></div>
+                    </div>
+                    <div class="benchmark-item">
+                        <span class="metric-name">Precision</span>
+                        <span class="metric-value">93.2%</span>
+                        <div class="metric-bar" style="width: 93.2%"></div>
+                    </div>
+                    <div class="benchmark-item">
+                        <span class="metric-name">Recall</span>
+                        <span class="metric-value">95.1%</span>
+                        <div class="metric-bar" style="width: 95.1%"></div>
+                    </div>
+                    <div class="benchmark-item">
+                        <span class="metric-name">F1 Score</span>
+                        <span class="metric-value">94.1%</span>
+                        <div class="metric-bar" style="width: 94.1%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Model Comparison -->
+        <section class="model-comparison">
+            <h2>Comparison with Other Approaches</h2>
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Model Type</th>
+                            <th>Accuracy</th>
+                            <th>Precision</th>
+                            <th>Recall</th>
+                            <th>Training Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Our LSTM Model</td>
+                            <td>94.7%</td>
+                            <td>93.2%</td>
+                            <td>95.1%</td>
+                            <td>8.5 hrs</td>
+                        </tr>
+                        <tr>
+                            <td>CNN Baseline</td>
+                            <td>82.3%</td>
+                            <td>81.7%</td>
+                            <td>83.1%</td>
+                            <td>6.2 hrs</td>
+                        </tr>
+                        <tr>
+                            <td>ResNet-50</td>
+                            <td>87.5%</td>
+                            <td>86.9%</td>
+                            <td>88.2%</td>
+                            <td>12.1 hrs</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="social-links">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="footer-nav">
+                <a href="about.html">About Us</a>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="#contact">Contact Us</a>
+            </div>
+            <div class="footer-info">
+                <p>DeepGuard Research Lab</p>
+                <p>KJ College of Engineering & Management Research</p>
+                <p>Pune, India - 411048</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 DeepGuard. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/accuracy.js"></script>
+</body>
+</html>

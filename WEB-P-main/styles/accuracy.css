@@ -1,0 +1,244 @@
+/* Accuracy Page Specific Styles */
+
+#accuracyChart {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.accuracy-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    padding-top: 6rem;
+}
+
+.accuracy-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.accuracy-header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.accuracy-header p {
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-top: 1rem;
+}
+
+/* Definition Section */
+.accuracy-definition {
+    margin-bottom: 4rem;
+}
+
+.definition-content {
+    display: flex;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.text-content {
+    flex: 2;
+}
+
+.metrics-illustration {
+    flex: 1;
+}
+
+.formula-box {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    box-shadow: var(--shadow);
+}
+
+.confusion-matrix {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.confusion-matrix table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.confusion-matrix th, 
+.confusion-matrix td {
+    padding: 0.75rem;
+    text-align: center;
+    border: 1px solid var(--divider-color);
+}
+
+.confusion-matrix th {
+    background-color: rgba(67, 97, 238, 0.1);
+}
+
+/* Graph Section */
+.accuracy-visualization {
+    margin-bottom: 4rem;
+}
+
+.graph-container {
+    position: relative; /* Required for Chart.js */
+    width: 100%;
+    height: 400px; /* Fixed height works best */
+    margin: 1rem 0;
+}
+
+.graph-controls {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+}
+
+.graph-btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    background-color: var(--bg-color);
+    border: 1px solid var(--divider-color);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.graph-btn:hover, 
+.graph-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Analysis Section */
+.performance-analysis {
+    margin-bottom: 4rem;
+}
+
+.analysis-content {
+    display: flex;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.analysis-text {
+    flex: 2;
+}
+
+.benchmark-card {
+    flex: 1;
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.benchmark-item {
+    margin-bottom: 1.5rem;
+}
+
+.metric-name {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+}
+
+.metric-value {
+    float: right;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.metric-bar {
+    height: 6px;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+    margin-top: 0.5rem;
+}
+
+/* Comparison Table */
+.model-comparison {
+    margin-bottom: 3rem;
+}
+
+.comparison-table {
+    overflow-x: auto;
+    margin-top: 2rem;
+}
+
+.comparison-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.comparison-table th, 
+.comparison-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--divider-color);
+}
+
+.comparison-table th {
+    background-color: rgba(67, 97, 238, 0.1);
+    font-weight: 600;
+}
+
+.comparison-table tr:last-child td {
+    border-bottom: none;
+}
+
+.comparison-table tr:hover {
+    background-color: rgba(67, 97, 238, 0.05);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .definition-content,
+    .analysis-content {
+        flex-direction: column;
+    }
+    
+    .metrics-illustration,
+    .benchmark-card {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .accuracy-container {
+        padding: 1rem;
+        padding-top: 5rem;
+    }
+    
+    .accuracy-header h1 {
+        font-size: 2rem;
+    }
+    
+    .graph-controls {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 576px) {
+    .confusion-matrix th, 
+    .confusion-matrix td {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .comparison-table th, 
+    .comparison-table td {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+}

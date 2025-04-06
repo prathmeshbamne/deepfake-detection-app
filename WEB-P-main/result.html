@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results | DeepGuard</title>
+    <meta name="description" content="Deepfake detection results from DeepGuard's LSTM-based system">
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/results.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <a href="E:/web/index.html"><img src="assets/logo.png" alt="DeepGuard Logo"></a>
+                <span>DeepGuard</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="login.html">Login</a>
+                <a href="accuracy.html">Accuracy</a>
+                <a href="about.html">About</a>
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="results-container">
+        <!-- Results Header -->
+        <header class="results-header">
+            <h1>Video Analysis Results</h1>
+            <p>Detailed breakdown of our deepfake detection analysis</p>
+            <div class="divider"></div>
+        </header>
+
+        <!-- Video Summary -->
+        <section class="video-summary">
+            <div class="video-info">
+                <h2>analyzed-video.mp4</h2>
+                <p>Duration: 2:45 | Resolution: 1920x1080 | Frames: 4950</p>
+            </div>
+            <div class="video-preview">
+                <div class="video-placeholder">
+                    <i class="fas fa-play-circle"></i>
+                    <p>Video Preview</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Anomaly Frames Section -->
+        <section class="anomaly-section">
+            <div class="section-header">
+                <h2>Frames with Potential Anomalies</h2>
+                <p>These frames were flagged as suspicious by our model</p>
+            </div>
+            
+            <div class="scroll-container">
+                <div class="frames-grid">
+                    <!-- Example anomaly frames - replace with your actual data -->
+                    <div class="frame-card">
+                        <div class="frame-image">
+                            <img src="E:\web\assets\sample-frame1.jpg.jpeg" alt="Anomaly frame">
+                            <div class="frame-overlay">
+                                <div class="frame-details">
+                                    <p><i class="fas fa-clock"></i> 00:01:23</p>
+                                    <p><i class="fas fa-percentage"></i> 87% Confidence</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="frame-tags">
+                            <span class="tag anomaly">Anomaly</span>
+                            <span class="tag blink">Blink Irregularity</span>
+                        </div>
+                    </div>
+                    
+                    <div class="frame-card">
+                        <div class="frame-image">
+                            <img src="assets/sample-frame2.jpg" alt="Anomaly frame">
+                            <div class="frame-overlay">
+                                <div class="frame-details">
+                                    <p><i class="fas fa-clock"></i> 00:02:45</p>
+                                    <p><i class="fas fa-percentage"></i> 92% Confidence</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="frame-tags">
+                            <span class="tag anomaly">Anomaly</span>
+                            <span class="tag artifacts">Compression Artifacts</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Add more frame cards as needed -->
+                </div>
+                <button class="scroll-btn left"><i class="fas fa-chevron-left"></i></button>
+                <button class="scroll-btn right"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Detected Faces Section -->
+        <section class="faces-section">
+            <div class="section-header">
+                <h2>Faces Detected by the Model</h2>
+                <p>Primary facial features analyzed throughout the video</p>
+            </div>
+            
+            <div class="scroll-container">
+                <div class="faces-grid">
+                    <!-- Example detected faces - replace with your actual data -->
+                    <div class="face-card">
+                        <div class="face-image">
+                            <img src="assets/sample-face1.jpg" alt="Detected face">
+                            <div class="face-overlay">
+                                <div class="face-details">
+                                    <p><i class="fas fa-user"></i> Subject A</p>
+                                    <p><i class="fas fa-film"></i> 143 appearances</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="face-card">
+                        <div class="face-image">
+                            <img src="assets/sample-face2.jpg" alt="Detected face">
+                            <div class="face-overlay">
+                                <div class="face-details">
+                                    <p><i class="fas fa-user"></i> Subject B</p>
+                                    <p><i class="fas fa-film"></i> 27 appearances</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Add more face cards as needed -->
+                </div>
+                <button class="scroll-btn left"><i class="fas fa-chevron-left"></i></button>
+                <button class="scroll-btn right"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Prediction Section -->
+        <section class="prediction-section">
+            <div class="prediction-card">
+                <h2>Video Integrity Prediction</h2>
+                <div class="prediction-result fake">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span>FAKE</span>
+                </div>
+                <div class="confidence-meter">
+                    <h3>Model's Confidence</h3>
+                    <div class="meter-container">
+                        <div class="meter-bar" style="width: 85%"></div>
+                        <span class="meter-value">85%</span>
+                    </div>
+                    <p class="confidence-description">High confidence of digital manipulation</p>
+                </div>
+            </div>
+            
+            <div class="analysis-notes">
+                <h3>Key Findings</h3>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> 14 frames with significant anomalies detected</li>
+                    <li><i class="fas fa-check-circle"></i> Inconsistent facial landmarks in 23% of frames</li>
+                    <li><i class="fas fa-check-circle"></i> Unnatural blinking patterns identified</li>
+                    <li><i class="fas fa-check-circle"></i> Audio-visual synchronization irregularities</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Action Buttons -->
+        <section class="action-buttons">
+            <button class="btn primary"><i class="fas fa-redo"></i> Analyze Another Video</button>
+            <button class="btn secondary"><i class="fas fa-download"></i> Download Full Report</button>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="social-links">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fas fa-youtube"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="footer-nav">
+                <a href="about.html">About Us</a>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="#contact">Contact Us</a>
+            </div>
+            <div class="footer-info">
+                <p>DeepGuard Research Lab</p>
+                <p>KJ College of Engineering & Management Research</p>
+                <p>Pune, India - 411048</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 DeepGuard. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/results.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Video | DeepGuard</title>
+    <meta name="description" content="Upload videos for deepfake detection analysis">
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/upload.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <a href="E:/web/index.html"><img src="assets/logo.png" alt="DeepGuard Logo"></a>
+                <span>DeepGuard</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="login.html">Login</a>
+                <a href="accuracy.html">Accuracy</a>
+                <a href="about.html">About</a>
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="upload-container">
+        <section class="upload-section">
+            <div class="upload-header">
+                <h1>Upload Your Video</h1>
+                <p>Analyze your video for potential deepfake manipulation</p>
+                <div class="divider"></div>
+            </div>
+
+            <!-- Upload Box -->
+            <div class="upload-box" id="uploadBox">
+                <!-- Initial Upload Content -->
+                <div class="upload-content" id="uploadContent">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h3>Drag and drop your video here</h3>
+                    <p>or</p>
+                    <button class="browse-btn" id="browseBtn">Browse Files</button>
+                    <input type="file" id="fileInput" accept="video/*" style="display: none;">
+                </div>
+
+                <!-- File Info & Progress Section (hidden initially) -->
+                <div class="upload-progress hidden" id="uploadProgress">
+                    <div class="file-preview" id="filePreview">
+                        <i class="fas fa-file-video"></i>
+                    </div>
+                    <div class="file-details">
+                        <h4 id="fileName">filename.mp4</h4>
+                        <div class="file-meta">
+                            <span id="fileSize"><i class="fas fa-file"></i> 0 MB</span>
+                            <span id="fileDuration"><i class="fas fa-clock"></i> 0:00</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Progress Bar -->
+                    <div class="progress-container" id="progressContainer">
+                        <div class="progress-bar" id="progressBar"></div>
+                        <span class="progress-text" id="progressText">0% uploaded</span>
+                    </div>
+                    
+                    <!-- Upload Button -->
+                    <button class="upload-btn" id="uploadBtn">
+                        <i class="fas fa-upload"></i> Upload Video
+                    </button>
+                    
+                    <button class="remove-btn" id="removeBtn">
+                        <i class="fas fa-times"></i> Cancel
+                    </button>
+                </div>
+
+                <!-- Success Message (hidden initially) -->
+                <div class="upload-success hidden" id="uploadSuccess">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Upload Successful!</h3>
+                    <p>Your video has been successfully uploaded and is being analyzed.</p>
+                    <button class="continue-btn" id="continueBtn">
+                        Continue to Results
+                    </button>
+                </div>
+
+                <div class="upload-restrictions">
+                    <p><i class="fas fa-clock"></i> Maximum duration: 2 minutes</p>
+                    <p><i class="fas fa-file"></i> Maximum size: 300 MB</p>
+                    <p><i class="fas fa-video"></i> Supported formats: MP4, MOV, AVI</p>
+                </div>
+            </div>
+
+            <!-- Error Message -->
+            <div class="error-message hidden" id="errorMessage"></div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="social-links">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="footer-nav">
+                <a href="about.html">About Us</a>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="#contact">Contact Us</a>
+            </div>
+            <div class="footer-info">
+                <p>DeepGuard Research Lab</p>
+                <p>KJ College of Engineering & Management Research</p>
+                <p>Pune, India - 411048</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 DeepGuard. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/upload.js"></script>
+</body>
+</html>
