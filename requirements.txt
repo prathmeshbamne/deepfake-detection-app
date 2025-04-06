@@ -1,0 +1,24 @@
+1. INSTALL ANACONDA 
+https://www.anaconda.com/products/individual 
+2. OPEN ANACONDA NAVIGATOR 
+3. Create New Environment with the project name 
+4. home-project environment-install cmd.exe, and jupyter notebook 
+5. open cmd.exe in a project environment 
+and execute the following commands one by one  
+pip install tensorflow 
+conda install -c conda-forge keras 
+conda install -c anaconda scikit-learn 
+conda install -c conda-forge opencv 
+conda install -c anaconda scikit-image 
+conda install -c anaconda flask 
+pip install pandas 
+pip install werkzeug==2.3.7 
+pip install cmake 
+conda install -c conda-forge dlib 
+Pip install face-recognition 
+Pip install torch==2.0.1 
+Pip install torchvision==0.15.2 
+Pip install matplotlib 
+Pip install opencv-python 
+Pip install numpy==1.24.2 
+pip install opencv-python==4.8.1.78 
